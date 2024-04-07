@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <title>Deep Halder</title>
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom:16px;
+      }
+      /*
+        h1{
+            text-align: center;
+            font-size: 40px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight:normal;
+            color:rgb(100,100,100);
+        }
+        h2{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size:32px;
+            color:rgb(100,100,100);
+            text-align :center;
+            font-weight:normal;
+        }
+        .bodytext{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color:rgb(80,80,80)
+        } */
+      /* #container{
+        max-width:720px;
+        margin:0px auto 0px auto;
+    } */
+    </style>
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="static/img1.jpg" />
+
+    <div class="container" id="container">
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Enterprises</h1>
+      <h2 class="text-center">About Deep</h2>
+      <div class="row" style="margin-bottom:16px">
+        <div class="col-md-6">
+      <p class="lead" class="bodytext">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
+        impedit in minima fugit, libero praesentium quaerat consectetur tempora
+        fugiat dolore corporis aliquam distinctio provident cum, non vero
+        obcaecati tenetur? Quos. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Autem esse nulla perferendis placeat! Consectetur
+        reiciendis aut, iusto quae hic vitae tempora! Impedit esse nesciunt
+        atque, dolorum accusantium dolor aperiam quam.
+      </p>
+      </div>
+      <div class="col-6">
+      <img src="/static/people.jpg" style="height:320px; border-radius:4px">
+      </div>
+      </div>
+
+      <h2 class="text-center mt-2 mb-4">Job Openings</h2>
+      <div>     
+        {%for job in jobs%}
+        {% include 'jobitem.html' %}
+        {%endfor%}
+      </div>
+      <div class="text-center">
+        <a class="btn btn-primary btn-lg mt-5" href="mailto:chalbazzcharlie@gmail.com?
+        subject=Application%20for%20{{jobs['title']}}&body=
+        my%20name%3A%3Cyour%20name%20here%3E%0D
+        %0Amy%20resume%3A%3Cresume%20link%3E%0D%0
+        Amy%20LinkedIn%20link%3A%3CLinkedIn%20link%3E">Contact Us</a>
+        <p class="mt-4">copyright Deep Enterprise 2024</p>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<div class="border-bottom row" 
+style="margin: bottom 16px;padding-bottom: 8px;">
+<div class="col-9">
+    <h4 style="color:rgb(120,120,120); margin-bottom:4px">
+    {{job['title']}}
+    </h4>
+    <div>
+        <b>Location:</b>
+        {{job['location']}}
+    </div>
+    {% if 'salary' in job %}
+    <div><b>Salary:</b>
+        {{job['salary']}}
+    </div>
+    {% endif %}
+</div>
+<div class="col-2" style="padding-top: 8px;">
+    <a href="mailto:chalbazzcharlie@gmail.com?
+    subject=Application%20for%20{{jobs['title']}}&body=
+    my%20name%3A%3Cyour%20name%20here%3E%0D
+    %0Amy%20resume%3A%3Cresume%20link%3E%0D%0
+    Amy%20LinkedIn%20link%3A%3CLinkedIn%20link%3E" 
+    type="button" class="btn btn-outline-primary">Apply</a>
+</div>
+</div>
