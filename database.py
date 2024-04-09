@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine,text
 from flask import jsonify
-from Confi import db_connection_string
 engine = create_engine(db_connection_string)
 
 def load_jobs_from_db():
